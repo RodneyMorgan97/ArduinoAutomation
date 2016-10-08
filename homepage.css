@@ -1,0 +1,23 @@
+html
+{
+	background-color: #3379ff;
+}
+.button
+{
+	height: 40px;
+	width: 100px;
+}
+
+.textField
+{
+	height: 50px;
+	width: 175px;
+
+}
+
+h2
+{
+	font-family: Helvetica;
+	color: gold;
+	
+}

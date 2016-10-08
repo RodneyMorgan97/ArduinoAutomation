@@ -1,0 +1,26 @@
+<?php
+	if(isset($_POST['submit']))
+	{
+		echo $_POST['submit'];
+	}
+?>
+
+
+
+
+
+
+
+<html>
+	<head>
+		<title>ARDUINO AUTOMATION</title>
+		<link href="homepage.css" rel="stylesheet"/>
+		<script src="homepagescript.js" type = "text/javascript"></script>
+	</head>
+
+	<body>
+		<button onclick="getText()" name="submit" id= "tempButton" class="button">Max Temperature</button>
+		<input id="maxTempReader" type = "text" placeholder="Enter Max Temperature" class="textField"/>
+	</body>
+
+</html>
