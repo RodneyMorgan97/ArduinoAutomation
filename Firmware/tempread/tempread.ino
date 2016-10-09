@@ -28,25 +28,29 @@ void setup()
  
 void loop()
 {
+//  Serial.println(maxLight);
+//  Serial.println(maxTemp);
     Serial.println("Loop Start");
-//    char clockTime[16];
-//    sprintf(clockTime, "  %2d:%2d:%2d   ", hour(), minute(), second());
-//    char dateTime[16];
-//    sprintf(dateTime, "   %2d/%2d/%4d   ", month(),day(), year());
+    char clockTime[16];
+    sprintf(clockTime, "  %2d:%2d:%2d   ", hour(), minute(), second());
+    char dateTime[16];
+    sprintf(dateTime, "   %2d/%2d/%4d   ", month(),day(), year());
     double temperature = readTemp();
     int lightLevel = readLightLevel();
     
     //output our current values for debugging purposes
     //debugPrint();
 
+    Serial.print("Blinds open: ");
+    Serial.println(isBlindOpen);
     Serial.print("temperature = ");
     Serial.println(readTemp());
     Serial.print("light = ");
     Serial.println(readLightString());
     Serial.print("light level = ");
     Serial.println(analogRead(lightPin));
-//    Serial.print(dateTime);
-//    Serial.println(clockTime);
+    Serial.print(dateTime);
+    Serial.println(clockTime);
     Serial.println(" ");
     Serial.println("----------------------");
     
@@ -61,22 +65,19 @@ void loop()
       //closeBlind();
       isBlindOpen = false;
       Serial.println("closing blind");
-      blind.write(0);
+      blind.write(180);
     }
   }
-   if(lightLevel <= maxLight)
+   if(lightLevel < maxLight)
   {
     if(!isBlindOpen)
     {
       //openBlind();
       isBlindOpen = true;
       Serial.println("opening blind");
-      blind.write(180);
+      blind.write(0);
     }
   }
-
-  //output max temp for debug
-  Serial.println(maxTemp);
   
   if(temperature >= maxTemp)
   {
