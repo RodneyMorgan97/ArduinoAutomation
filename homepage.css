@@ -10,7 +10,7 @@ html
 
 .textField
 {
-	height: 50px;
+	height: 40px;
 	width: 175px;
 
 }
@@ -19,5 +19,5 @@ h2
 {
 	font-family: Helvetica;
 	color: gold;
-	
+
 }
