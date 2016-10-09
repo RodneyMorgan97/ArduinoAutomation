@@ -1,10 +1,9 @@
 function validateData()
 {
 	var field = document.getElementById("submit");
-	alert(field.value);
-	if (field !== parseInt(field, 10))
+	if (isNaN(field.value))
 	{
-		alert("that is not an integer.");
+		alert("You have entered information other than a number.");
 	}
 
-
+}
