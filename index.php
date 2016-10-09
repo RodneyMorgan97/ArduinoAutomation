@@ -32,7 +32,7 @@
     <input type="radio" name="args" value="801">Very Bright
     <br>
     <br>
-    <input type="submit" value="Do it!">
+    <input type="submit" value="Submit">
   </form>
 	</body>
 
