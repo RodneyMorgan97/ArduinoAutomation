@@ -1,9 +1,10 @@
 function validateData()
 {
-	var field = document.getEl ementById("submit");
+	var field = document.getElementById("temp");
 	if (isNaN(field.value))
 	{
-		alert("You have entered information other than a number.");
+		event.preventDefault();
+		alert("You have entered information xother than a number.");
 	}
 
 }
